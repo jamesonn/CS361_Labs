@@ -73,6 +73,9 @@ public class Test {
                 nextChar=inputStr.read();
             }
 
+            //String to be used in directory
+            String temp  = sb.toString();
+
             // create our response String to use in other handler
             sharedResponse = sharedResponse+sb.toString();
 
@@ -83,6 +86,8 @@ public class Test {
 
             //Desktop dt = Desktop.getDesktop();
             //dt.open(new File("raceresults.html"));
+            Directory directory = new Directory();
+            directory.addEmployees(temp);
 
             // assume that stuff works all the time
             transmission.sendResponseHeaders(300, postResponse.length());

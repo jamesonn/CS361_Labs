@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1db07688-74c0-4585-9b94-ba3d5d2c517b" name="Default" comment="" />
+    <list default="true" id="1db07688-74c0-4585-9b94-ba3d5d2c517b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../HTTPServer/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HTTPServer/out/production/HTTPServer/Directory$1.class" afterPath="$PROJECT_DIR$/../HTTPServer/out/production/HTTPServer/Directory$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HTTPServer/out/production/HTTPServer/Directory.class" afterPath="$PROJECT_DIR$/../HTTPServer/out/production/HTTPServer/Directory.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HTTPServer/out/production/HTTPServer/Employee.class" afterPath="$PROJECT_DIR$/../HTTPServer/out/production/HTTPServer/Employee.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HTTPServer/out/production/HTTPServer/Test$PostHandler.class" afterPath="$PROJECT_DIR$/../HTTPServer/out/production/HTTPServer/Test$PostHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HTTPServer/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../HTTPServer/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HTTPServer/src/Directory.java" afterPath="$PROJECT_DIR$/../HTTPServer/src/Directory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HTTPServer/src/Employee.java" afterPath="$PROJECT_DIR$/../HTTPServer/src/Employee.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../HTTPServer/src/Test.java" afterPath="$PROJECT_DIR$/../HTTPServer/src/Test.java" />
+    </list>
     <ignored path="Connection.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,14 +37,19 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.085">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding />
+            <state vertical-scroll-proportion="-0.7740806">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -44,7 +61,7 @@
     <option name="width" value="974" />
     <option name="height" value="1047" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -441,9 +458,11 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.085">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="-0.7740806">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
