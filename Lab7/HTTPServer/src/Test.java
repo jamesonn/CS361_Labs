@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.InputStream;
 import java.net.InetSocketAddress;
+import java.util.Collections;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -88,6 +89,7 @@ public class Test {
             //dt.open(new File("raceresults.html"));
             Directory directory = new Directory();
             directory.addEmployees(temp);
+            directory.sortByLastName();
 
             // assume that stuff works all the time
             transmission.sendResponseHeaders(300, postResponse.length());

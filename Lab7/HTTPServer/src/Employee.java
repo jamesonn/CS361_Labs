@@ -1,12 +1,13 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Comparator;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-public class Employee {
+public class Employee{
 
-	public String firstName;
+	private String firstName;
 	private String lastName;
 	private String dept;
 	private String phoneNumber;
@@ -33,6 +34,8 @@ public class Employee {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
+	public String getLastName(){ return this.lastName; }
 
 	@Override
 	public String toString() {
