@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Comparator;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

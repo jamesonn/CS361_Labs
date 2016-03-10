@@ -90,6 +90,8 @@ public class Test {
             Directory directory = new Directory();
             directory.addEmployees(temp);
             directory.sortByLastName();
+            System.out.println("Employee directory:");
+            directory.printDirectory();
 
             // assume that stuff works all the time
             transmission.sendResponseHeaders(300, postResponse.length());

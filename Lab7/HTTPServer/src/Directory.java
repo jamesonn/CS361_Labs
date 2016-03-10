@@ -34,4 +34,10 @@ public class Directory{
     public void sortByLastName(){
         Collections.sort(employees, new EmployeeCompare());
     }
+
+    public void printDirectory(){
+        for (Employee emp : employees) {
+            System.out.println(emp.toString());
+        }
+    }
 }
