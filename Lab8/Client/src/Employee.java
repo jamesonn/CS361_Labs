@@ -5,17 +5,21 @@ public class Employee implements Comparable<Object>{
 	private String lastName;
 	private String department;
 	private String phoneNumber;
+	private String gender;
+	private String title;
 	
-	public Employee(String firstName, String lastName, String department, String phoneNum) {
+	public Employee(String firstName, String lastName, String department, String phoneNum, String gender, String title) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.department = department;
 		this.phoneNumber = phoneNum;
+		this.gender = gender;
+		this.title = title;
 	}
 	
 	@Override
 	public String toString() {
-		return firstName + " " + lastName + " in " + department + " has phone number of " + phoneNumber;
+		return title + firstName + " " + lastName + " in " + department + " has phone number of " + phoneNumber;
 	}
 
 	@Override
@@ -43,7 +47,11 @@ public class Employee implements Comparable<Object>{
 		return phoneNumber;
 	}
 
+	public String getGender() { return gender; }
+
+	public String getTitle() { return title; }
+
 	public boolean isEmpty() {
-		return firstName.isEmpty() && lastName.isEmpty() && phoneNumber.isEmpty() && department.isEmpty();
+		return firstName.isEmpty() && lastName.isEmpty() && phoneNumber.isEmpty() && department.isEmpty() && gender.isEmpty() && title.isEmpty();
 	}
 }

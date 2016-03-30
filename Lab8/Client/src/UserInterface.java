@@ -9,9 +9,15 @@ public class UserInterface extends JFrame{
     private JTextField lastName;
     private JTextField phone;
     private JTextField department;
+    private JList list;
+    private ButtonGroup genders;
+    private JRadioButton male;
+    private JRadioButton female;
+    private JRadioButton other;
     private static final int TEXT_LENGTH = 15;
     private Client c;
     private int currentEmployeeIndex = 0;
+    private String selectedGender = "";
 
 
     public UserInterface(Client c) {
@@ -77,10 +83,10 @@ public class UserInterface extends JFrame{
         constraints.gridy = 4;
         p.add(new JLabel("Gender:"),constraints);
 
-        ButtonGroup genders = new ButtonGroup();
-        JRadioButton male = new JRadioButton("Male");
-        JRadioButton female = new JRadioButton("Female");
-        JRadioButton other = new JRadioButton("Other");
+        genders = new ButtonGroup();
+        male = new JRadioButton("Male");
+        female = new JRadioButton("Female");
+        other = new JRadioButton("Other");
         genders.add(male);
         genders.add(female);
         genders.add(other);
@@ -105,7 +111,7 @@ public class UserInterface extends JFrame{
         constraints.gridx = 1;
         constraints.gridy = 5;
         String titles[] = {"Mr.","Ms.","Mrs.","Dr.","Col.","Prof."};
-        JList list = new JList(titles);
+        list = new JList(titles);
         list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         list.setLayoutOrientation(JList.VERTICAL);
         p.add(list, constraints);
@@ -126,7 +132,7 @@ public class UserInterface extends JFrame{
                 Employee em = getEmployeeFromFields();
                 c.addToList(em, currentEmployeeIndex);
                 em = c.getEmployee(--currentEmployeeIndex);
-                setFields(em.getFirstName(), em.getLastName(), em.getDepartment(), em.getPhoneNumber());
+                setFields(em.getFirstName(), em.getLastName(), em.getDepartment(), em.getPhoneNumber(), em.getGender(), em.getTitle());
             }
         });
         GridBagConstraints gbc = new GridBagConstraints();
@@ -145,7 +151,7 @@ public class UserInterface extends JFrame{
                 currentEmployeeIndex = c.addToList(em, currentEmployeeIndex);
                 try {
                     em = c.getEmployee(currentEmployeeIndex);
-                    setFields(em.getFirstName(), em.getLastName(), em.getDepartment(), em.getPhoneNumber());
+                    setFields(em.getFirstName(), em.getLastName(), em.getDepartment(), em.getPhoneNumber(), em.getGender(), em.getTitle());
                 } catch (IndexOutOfBoundsException e1) {
                     setFields();
                 }
@@ -172,16 +178,26 @@ public class UserInterface extends JFrame{
     }
 
     private void setFields() {
-        setFields("", "", "", "");
+        setFields("", "", "", "", "", "");
     }
 
-    private Employee getEmployeeFromFields() {
-        return new Employee(firstName.getText(), lastName.getText(), department.getText(), phone.getText());
+    private Employee getEmployeeFromFields(){
+        if(male.isSelected()) {
+            selectedGender = male.getText();
+        }else if(female.isSelected()) {
+            selectedGender = female.getText();
+        }else if(other.isSelected()) {
+            selectedGender = other.getText();
+        }
+        return new Employee(firstName.getText(), lastName.getText(), department.getText(), phone.getText(), selectedGender, list.getSelectedValue().toString());
     }
-    private void setFields(String firstName, String lastName, String department, String phone) {
+    private void setFields(String firstName, String lastName, String department, String phoneNumber, String gender, String title) {
         this.firstName.setText(firstName);
         this.lastName.setText(lastName);
         this.department.setText(department);
-        this.phone.setText(phone);
+        this.phone.setText(phoneNumber);
+        //TODO maybe pass these something to set to other than clear
+        this.genders.clearSelection();
+        this.list.clearSelection();
     }
 }
