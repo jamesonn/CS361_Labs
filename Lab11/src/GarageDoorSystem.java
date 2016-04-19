@@ -12,4 +12,20 @@ public class GarageDoorSystem {
     public void off(){
         theDoor = null;
     }
+
+    public void lightClick(){
+        theDoor.lightClick();
+    }
+
+    public void doorClick(){
+        theDoor.onClick();
+    }
+
+    public void limitHit(){
+        theDoor.onLimit();
+    }
+
+    public void safetyHit(){
+        theDoor.onSafety();
+    }
 }
