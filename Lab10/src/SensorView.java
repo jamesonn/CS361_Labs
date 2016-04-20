@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * Created by Nate on 4/12/2016.
@@ -16,18 +14,17 @@ public class SensorView extends JFrame {
         JPanel p = new JPanel();
         p.add(new JLabel(sensorName));
         JButton button = new JButton(sensorName);
-        button.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                try{
-                    trigger();
-                } catch (IndexOutOfBoundsException e1) {
+        button.addActionListener(e -> {
+            try{
+                trigger();
+            } catch (IndexOutOfBoundsException e1) {
 
-                }
             }
         });
         p.add(button);
-        pack();
+        add(p);
+        setSize(250,100);
+        setResizable(false);
         setVisible(true);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
