@@ -24,9 +24,7 @@ public class GarageDoor {
         try{
             TimeUnit.SECONDS.sleep(20);
             lightState = false;
-            doorState = true;
-            motor.off();
-            System.out.println("Light off, Door open");
+            System.out.println("Light off");
         }
         catch(Exception e){
 
