@@ -1,23 +1,24 @@
 /**
- * Created by Nate on 4/19/2016.
+ * Lab11
+ * @author Group1
  */
 public class Motor {
 
     private boolean motorState = false;
 
-    public void on(){
+    protected void on(){
         motorState = true;
     }
 
-    public void off(){
+    protected void off(){
         motorState = false;
     }
 
-    public boolean getMotorState(){
+    protected boolean getMotorState(){
         return motorState;
     }
 
-    public void reverse(){
+    protected void reverse(){
         if(motorState){
             motorState = false;
         }else{

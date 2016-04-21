@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Created by Nate on 4/19/2016.
+ * @author Group1
  */
 public class Driver {
 

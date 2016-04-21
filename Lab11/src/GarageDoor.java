@@ -1,7 +1,7 @@
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created by Nate on 4/19/2016.
+ *@author Group1 Nate, Jess, Sam, Shaun
  */
 public class GarageDoor {
 
@@ -9,26 +9,43 @@ public class GarageDoor {
     private boolean lightState;
     private Motor motor = new Motor();
 
-    public void open(){
+    public GarageDoor(){
+        doorState = false;
+        lightState = false;
+    }
+
+    /**
+     *Turns motor and light on(20sec), prints states to console
+     */
+    private void open(){
         motor.on();
         lightState = true;
         System.out.println("Opening... and light on");
         try{
             TimeUnit.SECONDS.sleep(20);
+            lightState = false;
+            doorState = true;
+            motor.off();
+            System.out.println("Light off, Door open");
         }
         catch(Exception e){
 
         }
-        lightState = false;
-        System.out.println("Light off");
     }
 
-    public void close(){
+    /**
+     * Turns motor off, prints state to console
+     */
+    private void close(){
         motor.on();
+
         System.out.println("Closing...");
     }
 
-    public void stop(){
+    /**
+     * Turns motor off and changes door state
+     */
+    private void stop(){
         motor.off();
         System.out.println("Door Stopped");
         if(doorState){
@@ -38,7 +55,10 @@ public class GarageDoor {
         }
     }
 
-    public void lightClick(){
+    /**
+     * Inverts light state, prints new state to console
+     */
+    protected void lightClick(){
         if(lightState){
             lightState = false;
             System.out.println("Light off");
@@ -48,22 +68,31 @@ public class GarageDoor {
         }
     }
 
-    public void onClick(){
+    /**
+     *
+     */
+    protected void onClick(){
         if(motor.getMotorState()){
             stop();
         }else if(!motor.getMotorState() && doorState){
-            open();
-        } else if (!motor.getMotorState() && !doorState) {
             close();
+        } else if (!motor.getMotorState() && !doorState) {
+            open();
         }
     }
 
-    public void onSafety(){
-        motor.reverse();
+    /**
+     *
+     */
+    protected void onSafety(){
         System.out.println("Safety hit");
+        open();
     }
 
-    public void onLimit(){
+    /**
+     *
+     */
+    protected void onLimit(){
         motor.off();
         if(doorState){
             doorState = false;

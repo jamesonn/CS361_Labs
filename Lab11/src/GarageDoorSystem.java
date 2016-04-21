@@ -1,11 +1,11 @@
 /**
- * Created by Nate on 4/19/2016.
+ * @author Group1
  */
 public class GarageDoorSystem {
 
     private GarageDoor theDoor = new GarageDoor();
 
-    public void on(){
+    protected void on(){
         theDoor = new GarageDoor();
     }
 
@@ -13,19 +13,19 @@ public class GarageDoorSystem {
         theDoor = null;
     }
 
-    public void lightClick(){
+    protected void lightClick(){
         theDoor.lightClick();
     }
 
-    public void doorClick(){
+    protected void doorClick(){
         theDoor.onClick();
     }
 
-    public void limitHit(){
+    protected void limitHit(){
         theDoor.onLimit();
     }
 
-    public void safetyHit(){
+    protected void safetyHit(){
         theDoor.onSafety();
     }
 }
