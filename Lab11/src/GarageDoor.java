@@ -83,8 +83,10 @@ public class GarageDoor {
      *
      */
     protected void onSafety(){
-        System.out.println("Safety hit");
-        open();
+    	if (motor.getMotorState() && doorState) {  // motor on + door open == door is closing
+    		System.out.println("Safety hit");
+    		open();
+    	}
     }
 
     /**
